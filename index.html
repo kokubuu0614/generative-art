@@ -293,11 +293,11 @@ function onMove(x, y) {
   }
 }
 
-canvas.addEventListener('mousemove', e => onMove(e.clientX, e.clientY - 0));
+canvas.addEventListener('mousemove', e => onMove(e.clientX, e.clientY));
 canvas.addEventListener('touchmove', e => {
   e.preventDefault();
-  const t = e.touches[0];
-  onMove(t.clientX, t.clientY);
+  const touch = e.touches[0];
+  onMove(touch.clientX, touch.clientY);
 }, { passive: false });
 
 // --- Controls ---
